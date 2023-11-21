@@ -18,7 +18,6 @@ logger = logging.getLogger(__name__)
 
 
 class PropertyFilter(django_filters.FilterSet):
-
     advert_type = django_filters.CharFilter(
         field_name="advert_type", lookup_expr="iexact"
     )
@@ -52,7 +51,6 @@ class ListAllPropertiesAPIView(generics.ListAPIView):
 
 
 class ListAgentsPropertiesAPIView(generics.ListAPIView):
-
     serializer_class = PropertySerializer
     pagination_class = PropertyPagination
     filter_backends = [
