@@ -13,4 +13,5 @@ black
 isort
 djoser
 djangorestframework-simplejwt
+django-celery-email
 Pyjwt
