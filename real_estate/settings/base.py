@@ -1,15 +1,8 @@
-from pathlib import Path
-
 import environ
 
-from datetime import timedelta
+from pathlib import Path
 
-import logging
-import logging.config
-
-from django.utils.log import DEFAULT_LOGGING
-
-env = environ.Env(DEBUG=(bool, False))
+env =environ.Env(DEBUG=(bool,False))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -51,14 +44,7 @@ THIRD_PARTY_APPS = [
     "djcelery_email",
 ]
 
-LOCAL_APPS = [
-    "apps.common",
-    "apps.users",
-    "apps.profiles",
-    "apps.ratings",
-    "apps.properties",
-    "apps.enquiries",
-]
+LOCAL_APPS = ["apps.common","apps.users","apps.profiles","apps.ratings","apps.properties","apps.enquiries"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -141,13 +127,17 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+ 
 }
+
+from datetime import timedelta
 
 SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": (
@@ -181,6 +171,11 @@ DJOSER = {
     },
 }
 
+
+import logging
+import logging.config
+
+from django.utils.log import DEFAULT_LOGGING
 
 logger = logging.getLogger(__name__)
 
